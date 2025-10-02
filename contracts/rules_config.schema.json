@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "rules_config.schema.json",
+  "type": "object",
+  "required": ["decks", "blackjackPays", "dealerHitsSoft17"],
+  "properties": {
+    "decks": { "type": "integer", "minimum": 1 },
+    "blackjackPays": { "type": "string", "enum": ["3:2", "6:5"] },
+    "dealerHitsSoft17": { "type": "boolean" },
+    "doubleAfterSplit": { "type": "boolean", "default": true },
+    "splitAcesOnce": { "type": "boolean", "default": true },
+    "surrender": {
+      "type": "string",
+      "enum": ["none", "late", "early"],
+      "default": "none"
+    }
+  }
+}

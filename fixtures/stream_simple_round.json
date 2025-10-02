@@ -1,0 +1,50 @@
+{
+  "zonesConfig": {
+    "region": { "x": 100, "y": 100, "w": 1280, "h": 720 },
+    "zones": [
+      { "id": "dealer", "polygon": [[0.45, 0.05], [0.55, 0.05], [0.55, 0.15], [0.45, 0.15]] },
+      { "id": "seat_1", "polygon": [[0.10, 0.60], [0.20, 0.60], [0.20, 0.85], [0.10, 0.85]] },
+      { "id": "seat_2", "polygon": [[0.30, 0.60], [0.40, 0.60], [0.40, 0.85], [0.30, 0.85]] },
+      { "id": "seat_3", "polygon": [[0.50, 0.60], [0.60, 0.60], [0.60, 0.85], [0.50, 0.85]] }
+    ]
+  },
+  "rules": {
+    "decks": 8,
+    "blackjackPays": "3:2",
+    "dealerHitsSoft17": false,
+    "doubleAfterSplit": true,
+    "splitAcesOnce": true,
+    "surrender": "none"
+  },
+  "countProfile": {
+    "name": "WongHalvesLike",
+    "tags": { "2": 0.5, "3": 1, "4": 1, "5": 1.5, "6": 1, "7": 0.5, "8": 0, "9": -0.5, "10": -1, "J": -1, "Q": -1, "K": -1, "A": -1 },
+    "roundDownTrueCount": true
+  },
+  "riskModel": {
+    "name": "ConservativeKelly",
+    "unitBase": 5,
+    "maxUnit": 150,
+    "twoHandThresholdTC": 3,
+    "kellyFraction": 0.033,
+    "minEnterTC": 1
+  },
+  "events": [
+    { "t": 0.10, "obs": { "zoneId": "seat_1", "rank": "10", "confidence": 0.97 } },
+    { "t": 0.12, "obs": { "zoneId": "seat_2", "rank": "5", "confidence": 0.96 } },
+    { "t": 0.15, "obs": { "zoneId": "seat_3", "rank": "9", "confidence": 0.95 } },
+    { "t": 0.20, "obs": { "zoneId": "dealer", "rank": "6", "confidence": 0.98 } },
+    { "t": 0.40, "obs": { "zoneId": "seat_1", "rank": "A", "confidence": 0.96 } },
+    { "t": 0.45, "obs": { "zoneId": "seat_2", "rank": "K", "confidence": 0.95 } },
+    { "t": 0.50, "obs": { "zoneId": "seat_3", "rank": "7", "confidence": 0.94 } },
+    {
+      "t": 0.80,
+      "command": "finalizeRound",
+      "outcomes": [
+        { "seatId": "seat_1", "result": "blackjack" },
+        { "seatId": "seat_2", "result": "loss" },
+        { "seatId": "seat_3", "result": "win" }
+      ]
+    }
+  ]
+}

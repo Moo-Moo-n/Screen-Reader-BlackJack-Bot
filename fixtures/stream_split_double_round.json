@@ -1,0 +1,35 @@
+{
+  "zonesConfig": {
+    "region": { "x": 0, "y": 0, "w": 1920, "h": 1080 },
+    "zones": [
+      { "id": "dealer", "polygon": [[0.46, 0.08], [0.54, 0.08], [0.54, 0.16], [0.46, 0.16]] },
+      { "id": "seat_2", "polygon": [[0.30, 0.62], [0.40, 0.62], [0.40, 0.88], [0.30, 0.88]] }
+    ]
+  },
+  "rules": {
+    "decks": 8,
+    "blackjackPays": "3:2",
+    "dealerHitsSoft17": false
+  },
+  "countProfile": {
+    "name": "AltCount",
+    "tags": { "2": 1, "3": 1, "4": 1, "5": 1, "6": 1, "7": 0, "8": 0, "9": 0, "10": -1, "J": -1, "Q": -1, "K": -1, "A": -1 }
+  },
+  "events": [
+    { "t": 0.10, "obs": { "zoneId": "seat_2", "rank": "8", "confidence": 0.97 } },
+    { "t": 0.14, "obs": { "zoneId": "seat_2", "rank": "8", "confidence": 0.95 } },
+    { "t": 0.18, "command": "split", "seatId": "seat_2" },
+    { "t": 0.20, "obs": { "zoneId": "seat_2", "rank": "3", "confidence": 0.95 } },
+    { "t": 0.23, "obs": { "zoneId": "seat_2", "rank": "2", "confidence": 0.94 } },
+    { "t": 0.30, "command": "double", "seatId": "seat_2", "handIndex": 0 },
+    { "t": 0.35, "obs": { "zoneId": "dealer", "rank": "10", "confidence": 0.98 } },
+    {
+      "t": 0.80,
+      "command": "finalizeRound",
+      "outcomes": [
+        { "seatId": "seat_2", "result": "win", "handIndex": 0 },
+        { "seatId": "seat_2", "result": "loss", "handIndex": 1 }
+      ]
+    }
+  ]
+}

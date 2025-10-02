@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "card_observation.schema.json",
+  "type": "object",
+  "required": ["timestamp", "zoneId", "rank", "confidence"],
+  "properties": {
+    "timestamp": { "type": "number", "description": "Unix seconds with fraction" },
+    "zoneId": { "type": "string", "description": "seat_1..seat_7 or dealer" },
+    "rank": {
+      "type": "string",
+      "enum": ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
+    },
+    "suit": {
+      "type": ["string", "null"],
+      "enum": ["S", "H", "D", "C", null]
+    },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "bbox": {
+      "type": "array",
+      "items": { "type": "number" },
+      "minItems": 4,
+      "maxItems": 4
+    }
+  }
+}
