@@ -1,0 +1,11 @@
+{
+  "hands": 3,
+  "wins": 2,
+  "losses": 1,
+  "pushes": 0,
+  "blackjacks": 1,
+  "avgBet": 15,
+  "net": 17.5,
+  "stdev": 1.2,
+  "penDepth": 0.12
+}

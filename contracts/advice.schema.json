@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "advice.schema.json",
+  "type": "object",
+  "properties": {
+    "bet": {
+      "type": "object",
+      "required": ["handCount", "unitSize", "rationale"],
+      "properties": {
+        "handCount": { "type": "integer", "enum": [1, 2] },
+        "unitSize": { "type": "number" },
+        "rationale": { "type": "string" }
+      }
+    },
+    "play": {
+      "type": "object",
+      "required": ["action"],
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": ["Hit", "Stand", "Double", "Split", "Surrender", "Insurance"]
+        },
+        "deviationTag": { "type": ["string", "null"] },
+        "tooltip": { "type": ["string", "null"] }
+      }
+    }
+  }
+}

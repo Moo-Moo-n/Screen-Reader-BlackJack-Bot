@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "risk_model.schema.json",
+  "type": "object",
+  "required": ["name", "unitBase", "maxUnit", "kellyFraction"],
+  "properties": {
+    "name": { "type": "string" },
+    "unitBase": { "type": "number", "minimum": 0 },
+    "maxUnit": { "type": "number", "minimum": 0 },
+    "twoHandThresholdTC": { "type": "number" },
+    "kellyFraction": { "type": "number", "minimum": 0 },
+    "minEnterTC": { "type": "number", "default": 1 }
+  }
+}
