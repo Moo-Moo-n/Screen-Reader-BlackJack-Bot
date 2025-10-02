@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "count_profile.schema.json",
+  "type": "object",
+  "required": ["name", "tags"],
+  "properties": {
+    "name": { "type": "string" },
+    "tags": {
+      "type": "object",
+      "additionalProperties": { "type": "number" }
+    },
+    "roundDownTrueCount": { "type": "boolean", "default": true }
+  }
+}

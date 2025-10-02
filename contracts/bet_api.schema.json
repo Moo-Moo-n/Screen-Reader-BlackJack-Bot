@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "bet_api.schema.json",
+  "type": "object",
+  "properties": {
+    "methods": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["suggest", "loadRiskModel"]
+      }
+    },
+    "suggest_return": {
+      "type": "object",
+      "properties": {
+        "bet": { "$ref": "advice.schema.json#/properties/bet" }
+      }
+    }
+  }
+}
