@@ -1,0 +1,26 @@
+[
+  {
+    "player": "16",
+    "dealer": "10",
+    "thresholdTC": 0,
+    "below": "Hit",
+    "atOrAbove": "Stand",
+    "tag": "16v10@TC>=0"
+  },
+  {
+    "player": "12",
+    "dealer": "3",
+    "thresholdTC": 2,
+    "below": "Hit",
+    "atOrAbove": "Stand",
+    "tag": "12v3@TC>=2"
+  },
+  {
+    "player": "9",
+    "dealer": "2",
+    "thresholdTC": 1,
+    "below": "Hit",
+    "atOrAbove": "Double",
+    "tag": "9v2@TC>=1"
+  }
+]

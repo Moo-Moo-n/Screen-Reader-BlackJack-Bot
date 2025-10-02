@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "game_state_api.schema.json",
+  "type": "object",
+  "properties": {
+    "methods": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "beginRound",
+          "commitObservation",
+          "overrideCard",
+          "finalizeRound",
+          "resetShoe",
+          "onEvent"
+        ]
+      }
+    }
+  }
+}
